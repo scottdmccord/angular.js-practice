@@ -8,7 +8,9 @@
   var gem = {
     name: 'Dodecahedron',
     price: 2.95,
-    description: "The prettiest gem to ever gem."
+    description: "The prettiest gem to ever gem.",
+    canPurchase: true,
+    soldOut: true
   }
 
 })();
