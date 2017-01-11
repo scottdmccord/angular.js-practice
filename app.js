@@ -5,12 +5,32 @@
     this.products = gems;
   });
 
+  app.controller('TabController', function(){
+    this.tab = 1;
+
+    this.setTab = function(setTab) {
+      this.tab = setTab;
+    };
+
+    this.isSet = function(checkTab) {
+      return this.tab === checkTab;
+    };
+
+  })
+
   var gems = [
     { name: 'Dodecahedron',
       price: 2.95,
       description: "The prettiest gem to ever gem.",
       canPurchase: true,
       soldOut: false,
+      shine: 8,
+      reviews: [{
+        stars: 3,
+        body: "Greatest gem ever.",
+        author: "bob the drag queen",
+        createdOn: 1397490980837
+      }],
       images: [
         'images/gems/gem-01.png',
         'images/gems/gem-04.png',
@@ -22,6 +42,13 @@
       description: "Ooh, see how it sparkles.",
       canPurchase: true,
       soldOut: false,
+      shine: 8,
+      reviews: [{
+        stars: 3,
+        body: "Greatest gem ever.",
+        author: "bob the drag queen",
+        createdOn: 1397490980837
+      }],
       images: [
         'images/gems/gem-02.png',
         'images/gems/gem-05.png',
@@ -33,6 +60,13 @@
       description: "It's like a diamond, only different.",
       canPurchase: false,
       soldOut: false,
+      shine: 8,
+      reviews: [{
+        stars: 3,
+        body: "Greatest gem ever.",
+        author: "bob the drag queen",
+        createdOn: 1397490980837
+      }],
       images: [
         'images/gems/gem-03.png',
         'images/gems/gem-06.png',
