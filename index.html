@@ -45,7 +45,11 @@
       </div>
       <div ng-show="tab.isSet(3)">
         <h4>Reviews</h4>
-        <blockquote></blockquote>
+        <blockquote ng-repeat="review in product.reviews">
+          <b>Stars: {{review.stars}}</b>
+          {{review.body}}
+          <cite>by: {{review.author}}</cite>
+        </blockquote>
       </div>
     </section>
 
