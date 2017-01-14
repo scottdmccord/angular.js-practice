@@ -52,7 +52,7 @@
         </blockquote>
 
         <!-- Review Form -->
-        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+        <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 
           <!-- Live Preview -->
           <blockquote>
@@ -64,15 +64,15 @@
           <!-- Review Form -->
           <h4>Submit a Review</h4>
           <fieldset>
-            <select ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+            <select class="form-border" ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
               <option value="">Rate the Product</option>
             </select>
           </fieldset>
           <fieldset>
-            <textarea ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." title="Review"></textarea>
+            <textarea class="form-border" ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." title="Review" required></textarea>
           </fieldset>
           <fieldset>
-            <input ng-model="reviewCtrl.review.author" type="email" placeholder="scott@example.com" title="Email" />
+            <input class="form-border" ng-model="reviewCtrl.review.author" type="email" placeholder="scott@example.com" title="Email" required />
           </fieldset>
           <fieldset>
             <input type="submit" value="Submit Review" />
